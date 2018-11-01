@@ -6,7 +6,7 @@ This is a plugin to be used with your Prerender server to avoid requesting to an
 
 `npm install prerender-extension-blacklist --save`
 
-**server.js*
+**server.js**
 
 ```javascript
 const prerender = require('prerender');
@@ -18,7 +18,7 @@ server.start();
 
 ```
 
-**Test it **
+**Test it**
 
 `curl http://localhost:3000/render?url=https://www.example.com/`
 
