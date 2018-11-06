@@ -39,9 +39,12 @@ module.exports = {
         });
         tab.Network.setRequestInterception({patterns: [{urlPattern: '*'}]});
 
-        let {blocked} = this.isBlocked(req.prerender.url);
+        let {blocked, type, data} = this.isBlocked(req.prerender.url);
         // Apply check for prerender url
         if (blocked) {
+            if (this.options.logRequests && blocked || debug) {
+                console.log(`- BLOCK prerender:${request.url} by rule ${type}:${data}`);
+            }
             res.send(404);
         }
         else {
@@ -71,7 +74,6 @@ module.exports = {
         // perform extension test
         if (this.BLACKLISTED_EXTS.indexOf(ext) > -1) {
             return {blocked: true, type: 'extension', data: ext};
-
         }
         // perform url match
         for (let i in this.BLACKLISTED_MATCH) {
@@ -80,11 +82,9 @@ module.exports = {
 
             if (blocked) {
                 return {blocked: true, type: 'match', data: reg};
-
             }
         }
 
         return {blocked: false, type: 'domain', data: ''};
-
     }
 };
