@@ -1,10 +1,10 @@
-# prerender extension blacklist
+# Prerender Request Blacklist
 
 This is a plugin to be used with your Prerender server to avoid requesting to any blacklist extensions such as image, css, fonts etc
 
 ## Install
 
-`npm install prerender-extension-blacklist --save`
+`npm install prerender-request-blacklist --save`
 
 **server.js**
 
@@ -12,7 +12,7 @@ This is a plugin to be used with your Prerender server to avoid requesting to an
 const prerender = require('prerender');
 const server = prerender();
 
-server.use(require('prerender-extension-blacklist'));
+server.use(require('prerender-request-blacklist'));
 
 server.start();
 
@@ -24,10 +24,14 @@ server.start();
 
 ## Options
 
-List of extension separate by "," 
+List of blacklist data separated by `,` 
 
 `export BLACKLISTED_EXTS=css,jpg`
+`export BLACKLISTED_DOMAIN=google.com`
+`export BLACKLISTED_MATCH=regex_pattern`
 
 For example:
 
 `export BLACKLISTED_EXTS=ico,jpg,jpeg,png,ttf,eot,otf,woff,woff2,gif,svg,pdf,css,svg`
+`export BLACKLISTED_DOMAIN=www.googletagmanager.com,googletagmanager.com,www.google-analytics.com,google-analytics.com,connect.facebook.net,lc.iadvize.com,fonts.gstatic.com,gstatic.com,i.ytimg.com,www.youtube.com,vimeo.com,www.vimeo.com,baidu.com,f.vimeocdn.com,fresnel.vimeocdn.com,player.vimeo.com,i.vimeocdn.com,youtube.com,player.youtube.com,stats.g.doubleclick.net,static.iadvize.com,api.iadvize.com`
+`export BLACKLISTED_MATCH=^[^ignore]+$`

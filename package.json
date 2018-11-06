@@ -1,11 +1,11 @@
 {
-  "name": "prerender-extension-blacklist",
-  "version": "1.0.0",
-  "description": "Prerender file extention blacklist ",
+  "name": "prerender-request-blacklist",
+  "version": "1.0.1",
+  "description": "Prerender request blacklist ",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kenylieou/prerender-extension-blacklist.git"
+    "url": "git+https://github.com/kenylieou/prerender-request-blacklist.git"
   },
   "keywords": [
     "prerender"
@@ -13,7 +13,7 @@
   "author": "Keny Lieou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kenylieou/prerender-extension-blacklist/issues"
+    "url": "https://github.com/kenylieou/prerender-request-blacklist/issues"
   },
-  "homepage": "https://github.com/kenylieou/prerender-extension-blacklist#readme"
+  "homepage": "https://github.com/kenylieou/prerender-request-blacklist#readme"
 }
