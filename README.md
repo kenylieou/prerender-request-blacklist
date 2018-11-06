@@ -4,6 +4,8 @@ This is a plugin to be used with your Prerender server to avoid requesting to an
 
 ## Install
 
+![npm install](https://nodei.co/npm/prerender-request-blacklist.png)
+
 `npm install prerender-request-blacklist --save`
 
 **server.js**
